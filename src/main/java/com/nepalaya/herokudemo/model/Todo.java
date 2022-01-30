@@ -17,9 +17,10 @@ import java.io.Serializable;
 public class Todo implements Serializable {
 
     @Id
-    @Column(name = "ID", nullable = false)
+    @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column(name = "DESCRIPTION", nullable = false)
     private String description;
 
