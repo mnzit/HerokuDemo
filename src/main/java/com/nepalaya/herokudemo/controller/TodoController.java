@@ -12,6 +12,6 @@ public class TodoController {
 
     @GetMapping
     public List<Todo> getAllTodos(){
-        return Arrays.asList(new Todo(1L,"Water the Plants"));
+        return Arrays.asList(new Todo(1L,"Water the Plants"),new Todo(2L,"Mow the Lawn"));
     }
 }
