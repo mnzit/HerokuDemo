@@ -24,6 +24,6 @@ public class TodoController {
 
     @PostMapping
     public Response save(@Valid @RequestBody CreateTodoRequest request) {
-        return todoService.getAll();
+        return todoService.create(request);
     }
 }
