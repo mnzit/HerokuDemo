@@ -3,14 +3,12 @@ package com.nepalaya.herokudemo.controller;
 import com.nepalaya.herokudemo.dto.Response;
 import com.nepalaya.herokudemo.request.CreateTodoRequest;
 import com.nepalaya.herokudemo.service.TodoService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
 @RestController
+@RequestMapping("todo")
 public class TodoController {
 
     private final TodoService todoService;
