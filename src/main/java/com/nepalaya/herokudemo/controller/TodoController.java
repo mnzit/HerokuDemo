@@ -1,17 +1,31 @@
 package com.nepalaya.herokudemo.controller;
 
-import com.nepalaya.herokudemo.model.Todo;
+import com.nepalaya.herokudemo.dto.Response;
+import com.nepalaya.herokudemo.request.CreateTodoRequest;
+import com.nepalaya.herokudemo.service.TodoService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Arrays;
-import java.util.List;
+import javax.validation.Valid;
 
 @RestController
 public class TodoController {
 
+    private final TodoService todoService;
+
+    public TodoController(TodoService todoService) {
+        this.todoService = todoService;
+    }
+
     @GetMapping
-    public List<Todo> getAllTodos(){
-        return Arrays.asList(new Todo(1L,"Water the Plants"),new Todo(2L,"Mow the Lawn"));
+    public Response getAll() {
+        return todoService.getAll();
+    }
+
+    @PostMapping
+    public Response save(@Valid @RequestBody CreateTodoRequest request) {
+        return todoService.getAll();
     }
 }
